@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/an_baitiakova/CLionProjects/laba6/Pars.h
+vector
+-
+fstream
+-
+SqMatrix.h
+/home/an_baitiakova/CLionProjects/laba6/SqMatrix.h
+
+/home/an_baitiakova/CLionProjects/laba6/SqMatrix.h
+iostream
+-
+cmath
+-
+stdexcept
+-
+iomanip
+-
+
+/home/an_baitiakova/CLionProjects/laba6/main.cpp
+Pars.h
+/home/an_baitiakova/CLionProjects/laba6/Pars.h
+
