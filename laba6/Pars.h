@@ -72,7 +72,7 @@ void FromFile(const std::string& name)
     size_t num;
     size_t pos, prev;
     double multi = 0;
-    int flag = 0, index = -1;
+    int index = -1;
 
     if (!file)
     {
@@ -211,38 +211,34 @@ void FromFile(const std::string& name)
                 after = str.substr(pos + 2, str.length());
                 SqMatrix Before = MatFromString(before);
                 SqMatrix After = MatFromString(after);
+
                 if (Before.getSize() == 0)
                 {
                     multi = stod(before);
-                    flag = 1;
+                    out << "$$"<< std::to_string(multi) << " * " << After.convert()
+                        <<" = " << (After *= multi).convert()<<"$$\n"<<std::endl;
                 }
 
-                if (After.getSize() == 0)
+                else if (After.getSize() == 0)
                 {
                     multi = stod(after);
-                    flag = -1;
+                    out << "$$"<< Before.convert() << " * " << std::to_string(multi)
+                        <<" = " << (Before *= multi).convert()<<"$$\n"<<std::endl;
                 }
 
-                try
+                else
                 {
-                    if (flag == 0)
+                    try
                     {
                         SqMatrix tmp0 = Before;
                         SqMatrix tmp = Before * After;
                         out << "$$" << tmp0.convert() << " * " << After.convert() << " = "
                             << tmp.convert() << "$$\n" << std::endl;
-                    }
-                    if (flag == 1)
-                        out << "$$"<< std::to_string(multi) << " * " << After.convert()
-                            <<" = " << (After *= multi).convert()<<"$$\n"<<std::endl;
 
-                    if (flag == -1)
-                        out << "$$"<< Before.convert() << " * " << std::to_string(multi)
-                            <<" = " << (Before *= multi).convert()<<"$$\n"<<std::endl;
-                }
-                catch(std::exception& e)
-                {
-                    std::cout <<e.what() << std::endl;
+                    }
+                    catch (std::exception &e) {
+                        std::cout << e.what() << std::endl;
+                    }
                 }
                 break;
             }
