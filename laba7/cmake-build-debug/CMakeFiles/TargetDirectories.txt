@@ -1,0 +1,5 @@
+/home/an_baitiakova/CLionProjects/laba7/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/an_baitiakova/CLionProjects/laba7/cmake-build-debug/CMakeFiles/laba7.dir
+/home/an_baitiakova/CLionProjects/laba7/cmake-build-debug/CMakeFiles/task3.dir
+/home/an_baitiakova/CLionProjects/laba7/cmake-build-debug/CMakeFiles/task4.dir
+/home/an_baitiakova/CLionProjects/laba7/cmake-build-debug/CMakeFiles/edit_cache.dir
