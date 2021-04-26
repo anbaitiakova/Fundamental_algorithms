@@ -8,7 +8,7 @@ private:
     {
         inserted_as_left_child,
         inserted_as_right_child,
-        case3, // TODO: rename
+        uncle_black_now,
         nothing_to_do,
         already_exist
     };
@@ -47,7 +47,7 @@ private:
                         // 2. parent is red, then grandparent is black and exists
                         // 2.1. uncle not exist: uncle is sentinel and then it's black
                         if ((*subtreeRoot)->rightSubtree == nullptr ||
-                            (*subtreeRoot)->rightSubtree->color == BLACK) // this case can't happen -_- (maybe)
+                            (*subtreeRoot)->rightSubtree->color == BLACK)
                         {
                             rotateRight(subtreeRoot);
                             (*subtreeRoot)->rightSubtree->color = RED;
@@ -60,7 +60,7 @@ private:
                             (*subtreeRoot)->leftSubtree->color = BLACK;
                             (*subtreeRoot)->rightSubtree->color = BLACK;
                             (*subtreeRoot)->color = RED;
-                            return case3;
+                            return uncle_black_now;
                         }
                     }
                     else if (insertStatus == inserted_as_right_child)
@@ -72,7 +72,7 @@ private:
                         // 2. parent is red, then grandparent is black and exists
                         // 2.1. uncle not exist: uncle is sentinel and then it's black
                         if ((*subtreeRoot)->rightSubtree == nullptr ||
-                            (*subtreeRoot)->rightSubtree->color == BLACK) // this case can't happen -_- (maybe)
+                            (*subtreeRoot)->rightSubtree->color == BLACK)
                         {
                             rotateLeft(&(*subtreeRoot)->leftSubtree);
                             rotateRight(subtreeRoot);
@@ -86,10 +86,10 @@ private:
                             (*subtreeRoot)->leftSubtree->color = BLACK;
                             (*subtreeRoot)->rightSubtree->color = BLACK;
                             (*subtreeRoot)->color = RED;
-                            return case3;
+                            return uncle_black_now;
                         }
                     }
-                    else if (insertStatus == case3)
+                    else if (insertStatus == uncle_black_now)
                     {
                         if ((*subtreeRoot)->color == BLACK)
                         {
@@ -120,7 +120,7 @@ private:
                         // 2. parent is red, then grandparent is black and exists
                         // 2.1. uncle not exist: uncle is sentinel and then it's black
                         if ((*subtreeRoot)->leftSubtree == nullptr ||
-                            (*subtreeRoot)->leftSubtree->color == BLACK) // this case can't happen -_- (maybe)
+                            (*subtreeRoot)->leftSubtree->color == BLACK)
                         {
                             rotateLeft(subtreeRoot);
                             (*subtreeRoot)->leftSubtree->color = RED;
@@ -133,7 +133,7 @@ private:
                             (*subtreeRoot)->rightSubtree->color = BLACK;
                             (*subtreeRoot)->leftSubtree->color = BLACK;
                             (*subtreeRoot)->color = RED;
-                            return case3;
+                            return uncle_black_now;
                         }
                     }
                     else if (insertStatus == inserted_as_left_child)
@@ -145,7 +145,7 @@ private:
                         // 2. parent is red, then grandparent is black and exists
                         // 2.1. uncle not exist: uncle is sentinel and then it's black
                         if ((*subtreeRoot)->leftSubtree == nullptr ||
-                            (*subtreeRoot)->leftSubtree->color == BLACK) // this case can't happen -_- (maybe)
+                            (*subtreeRoot)->leftSubtree->color == BLACK)
                         {
                             rotateRight(&(*subtreeRoot)->rightSubtree);
                             rotateLeft(subtreeRoot);
@@ -159,10 +159,10 @@ private:
                             (*subtreeRoot)->rightSubtree->color = BLACK;
                             (*subtreeRoot)->leftSubtree->color = BLACK;
                             (*subtreeRoot)->color = RED;
-                            return case3;
+                            return uncle_black_now;
                         }
                     }
-                    else if (insertStatus == case3)
+                    else if (insertStatus == uncle_black_now)
                     {
                         if ((*subtreeRoot)->color == BLACK)
                         {
@@ -641,7 +641,7 @@ public:
     void Add_Node(T&& k) override // вставка ключа k в дерево с корнем root
     {
         insert_statuses insertStatus = inner_add(&this->_root, static_cast<T&&>(k));
-        if (insertStatus == case3)
+        if (insertStatus == uncle_black_now)
         {
             this->_root->color = BLACK;
         }
