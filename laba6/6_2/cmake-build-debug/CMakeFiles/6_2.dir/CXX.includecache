@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/an_baitiakova/CLionProjects/laba6/6_2/Monom.h
+iostream
+-
+map
+-
+set
+-
+
+/home/an_baitiakova/CLionProjects/laba6/6_2/Pars.h
+Polinom.h
+/home/an_baitiakova/CLionProjects/laba6/6_2/Polinom.h
+fstream
+-
+vector
+-
+
+/home/an_baitiakova/CLionProjects/laba6/6_2/Polinom.h
+Monom.h
+/home/an_baitiakova/CLionProjects/laba6/6_2/Monom.h
+list
+-
+set
+-
+
+/home/an_baitiakova/CLionProjects/laba6/6_2/main.cpp
+iostream
+-
+Pars.h
+/home/an_baitiakova/CLionProjects/laba6/6_2/Pars.h
+

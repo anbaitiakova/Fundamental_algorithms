@@ -1,0 +1,3 @@
+/home/an_baitiakova/CLionProjects/laba6/6_2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/an_baitiakova/CLionProjects/laba6/6_2/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/an_baitiakova/CLionProjects/laba6/6_2/cmake-build-debug/CMakeFiles/6_2.dir
