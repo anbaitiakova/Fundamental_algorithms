@@ -1,0 +1,3 @@
+/home/an_baitiakova/CLionProjects/8_queens/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/an_baitiakova/CLionProjects/8_queens/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/an_baitiakova/CLionProjects/8_queens/cmake-build-debug/CMakeFiles/8_queens.dir
