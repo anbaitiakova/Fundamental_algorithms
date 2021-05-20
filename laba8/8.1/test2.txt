@@ -1,0 +1,7 @@
+84
+Border_Descriptor
+k1 = allocate (2)
+k2 = allocate (2)
+k3 = allocate (2)
+deallocate (k2)
+k4 = allocate (3)
