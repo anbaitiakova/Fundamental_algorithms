@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/Course_Work.dir/main.cpp.o  -o Course_Work 
